@@ -200,7 +200,7 @@ echo "###############################################"
 echo
 echo -e "\e[0;33m 28. Failed login attempts///// \e[0m"
 echo
-cat /var/log/auth.log | tail -15 | nl
+cat /var/log/auth.log | tail -15
 echo
 echo "###############################################"
 journalctl -u sshd | tail -10 | nl
