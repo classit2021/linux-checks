@@ -185,7 +185,7 @@ echo "###############################################"
 echo
 echo -e "\e[0;33m 26. CPU/System Information///// \e[0m"
 echo
-cat /proc/cpuinfo
+lscpu
 echo
 echo "###############################################"
 echo
