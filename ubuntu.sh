@@ -162,7 +162,7 @@ echo
 echo -e "\e[0;33m 21. List User Names///// \e[0m"
 echo
 cat /etc/passwd | grep bash
-slepp 3
+sleep 3
 echo
 echo "###############################################"
 echo
