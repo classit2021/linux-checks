@@ -46,6 +46,7 @@ echo
 echo -e "\e[0;33m 3.  Linux Distribution Information///// \e[0m"
 echo
 lsb_release -a
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -64,30 +65,35 @@ echo
 echo -e "\e[0;33m 6. Running Services///// \e[0m"
 echo
 service --status-all |grep "+"
+sleep 3
 echo
 echo "###############################################"
 echo
 echo -e "\e[0;33m 7. Active Internet Connections and Open Ports///// \e[0m"
 echo
 netstat -tulpn
+sleep 3
 echo
 echo "###############################################"
 echo
 echo -e "\e[0;33m 8. Check Available Space///// \e[0m"
 echo
 df -h
+sleep 3
 echo
 echo "###############################################"
 echo
 echo -e "\e[0;33m 9. Check Memory///// \e[0m"
 echo
 free -h
+sleep 3
 echo
 echo "###############################################"
 echo
 echo -e "\e[0;33m 10. History (Commands)///// \e[0m"
 echo
 history | tail -25 | nl
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -99,7 +105,8 @@ echo "###############################################"
 echo
 echo -e "\e[0;33m 12. IPtable Information///// \e[0m"
 echo
-iptables -L -n -v
+iptables -L -n -v --line-numbers
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -112,10 +119,12 @@ echo
 echo -e "\e[0;33m 14. Check SSH Configuration///// \e[0m"
 echo
 cat /etc/ssh/sshd_config
+sleep 3
 echo
 echo "###############################################"
 echo -e "\e[0;33m 15. List All Packages Installed///// \e[0m"
 apt-cache pkgnames | tail -4
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -134,6 +143,7 @@ echo
 echo -e "\e[0;33m 18. Check your Source List File///// \e[0m"
 echo
 cat /etc/apt/sources.list
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -152,6 +162,7 @@ echo
 echo -e "\e[0;33m 21. List User Names///// \e[0m"
 echo
 cat /etc/passwd | grep bash
+slepp 3
 echo
 echo "###############################################"
 echo
@@ -173,7 +184,9 @@ echo "###############################################"
 echo
 echo -e "\e[0;33m 24. Kernel Messages///// \e[0m"
 echo
+sleep 1
 dmesg | tail -4
+sleep 2
 echo
 echo "###############################################"
 echo
@@ -216,7 +229,7 @@ date
 echo
 lsof -i -P -n | grep LISTEN
 
-iptables -L -n -v
+#iptables -L -n -v
 systemctl status sshd --no-pager
 # Check Load Average
 loadaverage=$(top -n 1 -b | grep "load average:" | awk '{print $10 $11 $12}')
